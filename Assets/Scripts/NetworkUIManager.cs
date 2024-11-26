@@ -3,16 +3,19 @@ using Unity.Netcode;
 
 public class NetworkUIManager : MonoBehaviour
 {
-    public void StartServer()
+    public void StartHost()
     {
         if (NetworkManager.Singleton != null)
         {
-            NetworkManager.Singleton.StartServer();
-            Debug.Log("Server started.");
+            NetworkManager.Singleton.StartHost();
         }
-        else
+    }
+
+    public void StartClient()
+    {
+        if (NetworkManager.Singleton != null)
         {
-            Debug.LogError("NetworkManager.Singleton is null. Make sure it's set up correctly.");
+            NetworkManager.Singleton.StartClient();
         }
     }
 }
